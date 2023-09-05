@@ -17,15 +17,19 @@ $ brew update
 ```
 
 * 安装 robusta-krr
+添加 tap
 ```
-# 添加 tap
 brew tap robusta-dev/homebrew-krr
-# 安装 KRR
+```
+安装 KRR
+```
 brew install krr
-# 检查安装是否成功（首次启动可能需要更长的时间）
+```
+检查安装是否成功（首次启动可能需要更长的时间）
+```
 krr --help
 ```
-### Windows 上安装
+### Windows On Install
 确保已安装 Python 3.9（或更高版本）
 
 1. 克隆存储库
@@ -47,17 +51,17 @@ python krr.py --help
 
 ### Flags
 
-`--cpu-min` 设置建议的最小 CPU 值（以分钟为单位）
-`--mem-min` 设置建议的最小内存值（以 MB 为单位）
-`--memory_buffer_percentage`用于内存建议的峰值内存使用率的缓冲区百分比。默认值为15，表示在峰值内存使用率上增加15%的缓冲区
-`--history_duration` 要使用的普罗米修斯历史数据的持续时间（以小时为单位）
-`--timeframe_duration` 历史数据的步长，以分钟为单位。默认值为1.25分钟
-`--prometheus-url` `-P`指定Prometheus的URL，如果没有提供URL，则会尝试在Kubernetes集群中查找
-`--resource` `-r`指定要在哪些资源上运行特定的操作。它接受一个逗号分隔的资源列表作为输入，可以包括Deployment、StatefulSet、DaemonSet、Job和Rollout等资源。默认情况下，它将在所有资源上运行操作.
-`--namespace` `-n` 指定特定namespace下的资源
-`--selector` `-s` 通过标签选择器来过滤要操作的资源。它接受一个标签查询作为输入，支持使用'='、'=='和'!='来指定标签的匹配条件。您可以使用逗号分隔的键值对来指定多个标签和对应的值，例如 -s `key1=value1,key2=value2`
-`--formatter` `-f` 以特定格式输出(json, pprint, table, yaml) [default: table]
-`--points_required` 对于资源进行建议所需的数据点数量。默认值为100，表示至少需要100个数据点才能进行建议
+* `--cpu-min` 设置建议的最小 CPU 值（以分钟为单位）
+* `--mem-min` 设置建议的最小内存值（以 MB 为单位）
+* `--memory_buffer_percentage`用于内存建议的峰值内存使用率的缓冲区百分比。默认值为15，表示在峰值内存使用率上增加* 15%的缓冲区
+* `--history_duration` 要使用的普罗米修斯历史数据的持续时间（以小时为单位）
+* `--timeframe_duration` 历史数据的步长，以分钟为单位。默认值为1.25分钟
+* `--prometheus-url` `-P`指定Prometheus的URL，如果没有提供URL，则会尝试在Kubernetes集群中查找
+* `--resource` `-r`指定要在哪些资源上运行特定的操作。它接受一个逗号分隔的资源列表作为输入，可以包括Deployment、* StatefulSet、DaemonSet、Job和Rollout等资源。默认情况下，它将在所有资源上运行操作.
+* `--namespace` `-n` 指定特定namespace下的资源
+* `--selector` `-s` 通过标签选择器来过滤要操作的资源。它接受一个标签查询作为输入，支持使用'='、'=='和'!='来指定* 标签的匹配条件。您可以使用逗号分隔的键值对来指定多个标签和对应的值，例如 -s `key1=value1,key2=value2`
+* `--formatter` `-f` 以特定格式输出(json, pprint, table, yaml) [default: table]
+* `--points_required` 对于资源进行建议所需的数据点数量。默认值为100，表示至少需要100个数据点才能进行建议
 
 ### Usage
 
